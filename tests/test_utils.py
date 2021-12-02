@@ -9,7 +9,7 @@ def test_prod():
 
 
 @given(lists(floats(), min_size=1))
-def fuzz_prod(vals):
+def test_fuzz_prod(vals):
     total = 1
     for val in vals:
         total *= val

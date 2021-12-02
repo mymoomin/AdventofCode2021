@@ -16,14 +16,14 @@ def test_part1():
 
 
 @given(lists(integers().map(str), min_size=1))
-def fuzz_part1(data):
+def test_fuzz_part1(data):
     count = part1(data)
     assert count >= 0
     assert count <= len(data) - 1
 
 
 @given(lists(integers().map(str), min_size=3))
-def fuzz_part2(data):
+def test_fuzz_part2(data):
     count = part2(data)
     assert count >= 0
     assert count <= len(data) - 3
