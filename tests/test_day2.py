@@ -1,4 +1,5 @@
 from AoC2021.solutions.day2 import main, part1, part2
+import pytest
 from hypothesis import given
 from hypothesis.strategies import lists, integers
 
@@ -17,3 +18,7 @@ def test_part1():
 
 def test_part2():
     assert part2(demo_data) == 900
+
+
+def test_main():
+    assert main() == (2036120, 2015547716)
