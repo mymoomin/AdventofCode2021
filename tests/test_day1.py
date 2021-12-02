@@ -8,7 +8,7 @@ def get_input(filename: str):
         return f.read().split("\n")
 
 
-demo_data = get_input("day1")
+demo_data = get_input("day1demo")
 
 
 def test_part1():
