@@ -1,4 +1,4 @@
-from math import isnan
+from math import isnan, isclose
 from AoC2021.utils import prod, get_input
 from hypothesis import given
 from hypothesis.strategies import lists, floats
@@ -17,7 +17,7 @@ def test_fuzz_prod(vals):
     if isnan(total):
         assert isnan(prod(vals))
     else:
-        assert total == prod(vals)
+        assert isclose(total, prod(vals))
 
 
 def test_get_input():
