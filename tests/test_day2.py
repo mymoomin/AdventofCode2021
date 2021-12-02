@@ -1,7 +1,5 @@
 from AoC2021.solutions.day2 import main, part1, part2
 import pytest
-from hypothesis import given
-from hypothesis.strategies import lists, integers
 
 
 def get_input(filename: str):
