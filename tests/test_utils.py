@@ -1,3 +1,4 @@
+from math import isnan
 from AoC2021.utils import prod, get_input
 from hypothesis import given
 from hypothesis.strategies import lists, floats
@@ -13,7 +14,10 @@ def test_fuzz_prod(vals):
     total = 1
     for val in vals:
         total *= val
-    assert total == prod(vals)
+    if isnan(total):
+        assert isnan(prod(vals))
+    else:
+        assert total == prod(vals)
 
 
 def test_get_input():
