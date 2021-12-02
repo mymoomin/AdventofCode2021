@@ -22,15 +22,15 @@ def test_fuzz_part1(data):
     assert count <= len(data) - 1
 
 
+def test_part2():
+    assert part2(demo_data) == 5
+
+
 @given(lists(integers().map(str), min_size=3))
 def test_fuzz_part2(data):
     count = part2(data)
     assert count >= 0
     assert count <= len(data) - 3
-
-
-def test_part2():
-    assert part2(demo_data) == 5
 
 
 def test_main():
