@@ -1,23 +1,23 @@
 from math import isnan, isclose
-from AoC2021.utils import prod, get_input
+from AoC2021.utils import product, get_input
 from hypothesis import given
 from hypothesis.strategies import lists, floats
 import pytest
 
 
-def test_prod():
-    assert prod([1, 2, 3, 4]) == 24
+def test_product():
+    assert product([1, 2, 3, 4]) == 24
 
 
 @given(lists(floats(), min_size=1))
-def test_fuzz_prod(vals):
+def test_fuzz_product(vals):
     total = 1
     for val in vals:
         total *= val
     if isnan(total):
-        assert isnan(prod(vals))
+        assert isnan(product(vals))
     else:
-        assert isclose(total, prod(vals))
+        assert isclose(total, product(vals))
 
 
 def test_get_input():

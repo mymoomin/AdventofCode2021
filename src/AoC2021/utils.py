@@ -10,5 +10,5 @@ def get_input(filename: str):
     return data
 
 
-def prod(vals: Iterable[float]):
+def product(vals: Iterable[float]):
     return functools.reduce(lambda acc, cur: acc * cur, vals)
