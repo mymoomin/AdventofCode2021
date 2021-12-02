@@ -2,7 +2,6 @@ from AoC2021.utils import prod, get_input
 from hypothesis import given
 from hypothesis.strategies import lists, floats
 import pytest
-import os
 
 
 def test_prod():
