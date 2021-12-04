@@ -22,7 +22,7 @@ def test_part1(testinput, expected):
 
 @pytest.mark.parametrize(
     "testinput,expected",
-    [(demo_data, 198), (["1"], 0), (["10"], 2), (["100", "011", "011"], 12)],
+    [(demo_data, 198), (["1"], 1), (["10"], 2), (["100", "001", "011"], 12)],
 )
 def test_part1_simple(testinput, expected):
     assert part1_simple(testinput) == expected
