@@ -1,4 +1,13 @@
 import numpy as np
+from AoC2021.utils import get_input
+
+
+def main():
+    data = get_input("day3")
+    one = part1(data)
+    # two = part2(data)
+    print(one)
+    return one
 
 
 def part1(data: list[str]):
@@ -35,3 +44,4 @@ if __name__ == "__main__":  # pragma no cover
         ]
     )
     print(one)
+    main()
