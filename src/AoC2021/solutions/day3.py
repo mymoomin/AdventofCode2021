@@ -27,25 +27,31 @@ def part1_simple(data: list[str]):
 
 
 def part2(data: list[str]):
-    pass
+    bits = np.array([list(map(int, datum)) for datum in data])
+    oxs = bits.copy()
+
+    i = 0
+    while len(oxs) > 1:
+        print(oxs.mean(0))
+        most_common = np.round(np.nextafter(oxs.mean(0), np.inf))[i]
+        oxs = oxs[oxs[:, i] == most_common]
+        i += 1
+    bin_ox = "".join(oxs[0].astype(int).astype(str))
+
+    cos = bits.copy()
+
+    i = 0
+    while len(cos) > 1:
+        print(cos.mean(0))
+        most_common = np.round(np.nextafter(cos.mean(0), np.inf))[i]
+        cos = cos[cos[:, i] != most_common]
+        i += 1
+    bin_co = "".join(cos[0].astype(int).astype(str))
+
+    print(bin_ox, bin_co)
+    return int(bin_ox, 2) * int(bin_co, 2)
 
 
 if __name__ == "__main__":  # pragma no cover
-    one = part1_simple(
-        [
-            "00100",
-            "11110",
-            "10110",
-            "10111",
-            "10101",
-            "01111",
-            "00111",
-            "11100",
-            "10000",
-            "11001",
-            "00010",
-            "01010",
-        ]
-    )
-    print(one)
+    print(part2(["1"]))
     main()
