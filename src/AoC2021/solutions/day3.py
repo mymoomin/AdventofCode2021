@@ -26,6 +26,10 @@ def part1_simple(data: list[str]):
     return gamma * epsilon
 
 
+def part2(data: list[str]):
+    pass
+
+
 if __name__ == "__main__":  # pragma no cover
     one = part1_simple(
         [

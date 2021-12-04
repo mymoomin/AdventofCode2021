@@ -1,4 +1,4 @@
-from AoC2021.solutions.day3 import part1, part1_simple, main
+from AoC2021.solutions.day3 import part1, part1_simple, part2, main
 import pytest
 from hypothesis import given
 from hypothesis.strategies import lists, text, integers
@@ -35,6 +35,14 @@ def test_part1_simple(testinput, expected):
 )
 def test_part1_eq_part1_simple(data):
     assert part1(data) == part1_simple(data)
+
+
+@pytest.mark.parametrize(
+    "testinput,expected",
+    [(demo_data, 230), (["1"], 0), (["10"], 2), (["100", "011", "011"], 12)],
+)
+def test_part2(testinput, expected):
+    assert part2(testinput) == expected
 
 
 def test_main():
