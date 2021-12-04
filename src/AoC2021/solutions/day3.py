@@ -1,5 +1,7 @@
 import numpy as np
+import numpy.typing as npt
 from AoC2021.utils import get_input
+from typing import cast
 
 
 def main():
@@ -18,7 +20,7 @@ def part1(data: list[str]):
 
 def part1_simple(data: list[str]):
     bits = [np.array(list(map(int, datum))) for datum in data]
-    avg = sum(bits) / len(bits)
+    avg = cast(npt.NDArray[np.float64], sum(bits) / len(bits))
     bin_gamma = list(map(round, avg))  # [round(x) for x in avg]
     bin_epsilon = [1 - x for x in bin_gamma]
     gamma = int("".join(map(str, bin_gamma)), 2)
