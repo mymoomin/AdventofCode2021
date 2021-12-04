@@ -46,4 +46,4 @@ def test_part2(testinput, expected):
 
 
 def test_main():
-    assert main() == 2724524
+    assert main() == (2724524, 2775870)
