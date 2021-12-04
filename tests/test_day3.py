@@ -1,4 +1,4 @@
-from AoC2021.solutions.day3 import part1, part1_simple
+from AoC2021.solutions.day3 import part1, part1_simple, main
 import pytest
 from hypothesis import given
 from hypothesis.strategies import lists, text, integers
@@ -35,3 +35,7 @@ def test_part1_simple(testinput, expected):
 )
 def test_part1_eq_part1_simple(data):
     assert part1(data) == part1_simple(data)
+
+
+def test_main():
+    assert main() == 2724524
