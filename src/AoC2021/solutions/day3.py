@@ -5,9 +5,9 @@ from AoC2021.utils import get_input
 def main():
     data = get_input("day3")
     one = part1(data)
-    # two = part2(data)
-    print(one)
-    return one
+    two = part2(data)
+    print(one, two)
+    return (one, two)
 
 
 def part1(data: list[str]):
