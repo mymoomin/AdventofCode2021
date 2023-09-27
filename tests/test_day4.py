@@ -1,5 +1,5 @@
-from AoC2021.solutions.day4 import part1
 import pytest
+from AoC2021.solutions.day4 import main, part1
 
 
 def get_input(filename: str):
@@ -16,3 +16,7 @@ demo_data = get_input("day4demo")
 )
 def test_part1(testinput, expected):
     assert part1(testinput) == expected
+
+
+def test_main():
+    assert main() == 51776
