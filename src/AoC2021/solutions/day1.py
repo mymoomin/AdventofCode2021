@@ -38,7 +38,7 @@ def part2(data: list[str]):
     :return: number of increases"""
     depths = list(map(int, data))
     counter = 0
-    last = sum(depths[0:3])
+    last = sum(depths[:3])
 
     for i in range(2, len(depths)):
         window_depth = sum(depths[i - 2 : i + 1])
